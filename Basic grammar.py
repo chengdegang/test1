@@ -42,12 +42,21 @@ import keyword
 # print (tuple + tinytuple) # 连接元组
 
 #集合
-sites = {'Google', 'Taobao', 'Runoob', 'Facebook', 'Zhihu', 'Baidu', 'Baidu'}
-print(sites)   # 输出集合，重复的元素被自动去掉
-# 成员测试
-if 'Runoob2' in sites :
-    print('Runoob 在集合中')
-else :
-    print('Runoob 不在集合中')
+# sites = {'Google', 'Taobao', 'Runoob', 'Facebook', 'Zhihu', 'Baidu', 'Baidu'}
+# print(sites)   # 输出集合，重复的元素被自动去掉
+# # 成员测试
+# if 'Runoob2' in sites :
+#     print('Runoob 在集合中')
+# else :
+#     print('Runoob 不在集合中')
 #集合之间可进行运算
 
+#字典，与集合等不同的是通过键值，而不是偏移,有点像hashmap
+# tinydict = {'name': 'runoob',2:1, 'site': 'www'}
+# print (tinydict['name'])
+# print (tinydict[2])
+# print (tinydict.values())
+
+a = 5.026536624243638
+
+print(str(float('%.3f' % a)))
