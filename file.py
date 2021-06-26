@@ -1,9 +1,11 @@
 #coding:utf-8
+import os
 import re
 
 cesfile = "ces.txt"
 alicefile = 'data/alice.txt'
 
+#统计文件中的单词数
 def alicenum():
     with open(alicefile) as f:
         alice = f.read()
@@ -11,7 +13,7 @@ def alicenum():
         num = len(words)
         print(num)
 
-
+#正则提取文件中的数据并处理
 def ces():
     with open(cesfile) as ces:
         #1读取返回所有内容
@@ -36,7 +38,7 @@ def ces():
                 time_ori1 = re.findall(r"time1=(.+?)s", line)
                 #去掉列表括号
                 time_ori1_ = ''.join(time_ori1)
-                # print(time_ori1_)
+                # print(time_ori1)
                 time1.append(time_ori1_)
             if 'time2' in line:
                 # time_ori1 = line.split('time1')
@@ -62,6 +64,7 @@ def ces():
         # else:
         #     print("out")
 
+#处理列表中的小数，并统一
 def write(list):
     writefile = 'data/result.txt'
     with open(writefile,'a') as wf:
@@ -69,7 +72,37 @@ def write(list):
             print(float('%.3f' % wline))
             wf.write(str(float('%.3f' % wline))+'\n')
 
+dirf = '/Users/jackrechard/PycharmProjects/testexcel/file'
+
+#遍历某个文件夹下的所有文件
+def dir(file):
+    # root 表示当前正在访问的文件夹路径
+    # dirs 表示该文件夹下的子目录名list
+    # files 表示该文件夹下的文件list
+    for root, dirs, files in os.walk(file):
+        for f in files:
+            #判断是否存在.xlsx的文件
+            if '.xlsx' in f:
+                #打印文件名
+                # print(f)
+                #打印文件路径
+                print('----------关注以下数据----------')
+                print(os.path.join(root, f))
+
+            # print(os.path.join(root,f))
+        # for d in dirs:
+        #     print(os.path.join(root, d))
+direct = '/Users/jackrechard/PycharmProjects/testexcel/file/test.txt'
+#测试os的分离文件与扩展名
+def ostest():
+    result1 = os.path.splitext(direct)
+    if '.txt' in result1[1] :
+        print(result1)
+        print('find it')
+
 
 # alicenum()
 # ces()
-write([0.30000000000000004, 0.4])
+# write([0.30000000000000004, 0.4])
+# dir(dirf)
+ostest()

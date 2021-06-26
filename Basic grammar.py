@@ -57,6 +57,12 @@ import keyword
 # print (tinydict[2])
 # print (tinydict.values())
 
-a = 5.026536624243638
-
-print(str(float('%.3f' % a)))
+#打印小数点后三位转换成字符串
+# a = 5.026536624243638
+# print(str(float('%.3f' % a)))
+#.join用法，将字符串列表以'x'串联起来
+list1 = ['a1','b1','c1']
+list2 = [1,2,3]
+print(';'.join(list1))
+# print(';'.join(list2))
+print(list2)
