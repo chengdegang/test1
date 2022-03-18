@@ -1,17 +1,25 @@
 #coding:utf-8
 import os
 import re
+from collections import Counter
 
 cesfile = "ces.txt"
 alicefile = 'data/alice.txt'
 
-#统计文件中的单词数
+#统计文件中的单词数并得出出现频率最高的十个单词
 def alicenum():
     with open(alicefile) as f:
         alice = f.read()
         words = alice.split()
         num = len(words)
         print(num)
+    # print(words.count('it'))
+    c = Counter(words)
+    print(c)
+    print(c.most_common(10))
+
+    # dic = {}
+
 
 #正则提取文件中的数据并处理
 def ces():
@@ -100,9 +108,15 @@ def ostest():
         print(result1)
         print('find it')
 
+def qiepian():
+    data = ",b'/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBwkIBgcJBwYGCAsICQoKCgoKBggLDAsKDAkKCgr/"
+    data2 = '666'
+    data2 = f'123{data2[0:]}'
+    print(data2)
 
-# alicenum()
+alicenum()
 # ces()
 # write([0.30000000000000004, 0.4])
 # dir(dirf)
-ostest()
+# ostest()
+# qiepian()

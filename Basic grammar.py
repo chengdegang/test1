@@ -1,4 +1,5 @@
 import keyword
+import time
 
 # print("ces")
 # print(keyword.kwlist)
@@ -61,8 +62,21 @@ import keyword
 # a = 5.026536624243638
 # print(str(float('%.3f' % a)))
 #.join用法，将字符串列表以'x'串联起来
-list1 = ['a1','b1','c1']
-list2 = [1,2,3]
-print(';'.join(list1))
-# print(';'.join(list2))
-print(list2)
+# list1 = ['a1','b1','c1']
+# list2 = [1,2,3]
+# print(';'.join(list1))
+# # print(';'.join(list2))
+# print(list2)
+
+time2 = time.strftime("%Y_%m_%d %H:%M:%S", time.localtime())
+# print (time2)
+
+def jis():
+    n = input('please input: ')
+    sum = 0
+    for i in range(int(n)):
+        sum = sum + i*i
+    print(sum)
+
+if __name__ == '__main__':
+    jis()

@@ -15,7 +15,7 @@ num_b = list(map(int, b))
 # c = [b[i] - a[i] for i in range(len(a))]
 # c = [num_b[i] - num_a[i] for i in range(len(num_a))]
 # print(c)
-print(num_a)
+# print(num_a)
 
 
 # print(numbers)
@@ -33,3 +33,15 @@ print(num_a)
 # b_tuple=('monday','tuesday','wednesday','thursday','friday','saturday','sunday')
 # print(' '.join(b_tuple))
 
+result_suc = 0
+result_fail = 0
+dataxy = {'code': '00000000', 'msg': '成功', 'result': {'algEncodingType': 0, 'algEncodingData': 'EAj3/dAJEMHMy5f67ycYECAAKlAKABCAgP7///////8BGhsZAAAAAAAAAIAZAAAAAAAAAAAZAAAAAAAAAIAiJBkAAAAAAAAAABkAAAAAAAAAABkAAAAAAAAAABkAAAAAAADwPzIA', 'algCode': 1, 'protobufEncodingData': 'EAj3/dAJEMHMy5f67ycYECAAKlAKABCAgP7///////8BGhsZAAAAAAAAAIAZAAAAAAAAAAAZAAAAAAAAAIAiJBkAAAAAAAAAABkAAAAAAAAAABkAAAAAAAAAABkAAAAAAADwPzIA'}}
+algcode = str(dataxy['result']['algCode'])
+print(algcode)
+if algcode == '1':
+    result_suc = result_suc + 1
+elif '16' in algcode:
+    result_fail = result_fail + 1
+
+print(f'result_suc:{result_suc}')
+print(f'result_fail:{result_fail}')
